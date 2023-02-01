@@ -6,13 +6,11 @@ import { useLang } from "../../Context/LangContext";
 import wishListApi from "../../services/msWishList";
 
 import api from "../../services/api";
-import { Context } from "../../Context/AuthContext";
-import { useContext } from "react";
-import InspireComponent from "./Inspire";
+import FindPromotersComponent from "./findPromotersPage";
 
-const InspirePage = () => {
+const FindPromotersPage = () => {
   const { routeTranslations } = useLang();
-  const { validaLogin } = useContext(Context);
+
   const { setCartLength } = useCart();
   const headerUrl = process.env.NEXT_PUBLIC_REACT_APP_HEADER_URL;
   const mktName = process.env.NEXT_PUBLIC_REACT_APP_NAME;
@@ -20,9 +18,8 @@ const InspirePage = () => {
 
   return (
     <>
-      <InspireComponent
+      <FindPromotersComponent
         api={api}
-        validaLogin={validaLogin}
         routeTranslations={routeTranslations}
         setCartLength={setCartLength}
         wishListApi={wishListApi}
@@ -34,4 +31,4 @@ const InspirePage = () => {
   );
 };
 
-export default InspirePage;
+export default FindPromotersPage;

@@ -36,7 +36,7 @@ const nextConfig = {
     };
     config.plugins.push(
       new NextFederationPlugin({
-        name: "inspirePage",
+        name: "findPromotersPage",
         remotes: {
           loginPage: `loginPage@https://micro-front-login.vercel.app/_next/static/${
             isServer ? "ssr" : "chunks"
@@ -48,7 +48,8 @@ const nextConfig = {
         },
         filename: "static/chunks/remoteEntry.js",
         exposes: {
-          "./inspirePage": "./PagesComponents/Inspire/Inspire.jsx",
+          "./findPromotersPage":
+            "./PagesComponents/FindPromoters/findPromotersPage.jsx",
         },
 
         extraOptions: {
